@@ -124,10 +124,11 @@ services:
 
       GOTRUE_SMS_AUTOCONFIRM: ${ENABLE_PHONE_AUTOCONFIRM}
 
-      # OTP Configuration for SMS (used when GOTRUE_HOOK_SEND_SMS_ENABLED is true or when using built-in providers)
+      # OTP Configuration for SMS (used when GOTRUE_HOOK_SEND_SMS_ENABLED is true)
       GOTRUE_SMS_OTP_EXP: ${GOTRUE_SMS_OTP_EXP:-300} # OTP expiry in seconds (default 5 minutes)
       GOTRUE_SMS_OTP_LENGTH: ${GOTRUE_SMS_OTP_LENGTH:-5} # OTP length (default 5 digits)
       GOTRUE_SMS_MAX_FREQUENCY: ${GOTRUE_SMS_MAX_FREQUENCY:-60s} # Max frequency for sending OTP to the same number
+      GOTRUE_SMS_PROVIDER: ${GOTRUE_SMS_PROVIDER:-}
 
       # External OAuth providers
       GOTRUE_EXTERNAL_GOOGLE_ENABLED: ${GOTRUE_EXTERNAL_GOOGLE_ENABLED:-false}
