@@ -127,12 +127,6 @@ services:
 
       GOTRUE_SMS_AUTOCONFIRM: ${ENABLE_PHONE_AUTOCONFIRM}
 
-      # OTP Configuration for SMS (used when GOTRUE_HOOK_SEND_SMS_ENABLED is true)
-      GOTRUE_SMS_OTP_EXP: ${GOTRUE_SMS_OTP_EXP:-300} # OTP expiry in seconds (default 5 minutes)
-      GOTRUE_SMS_OTP_LENGTH: ${GOTRUE_SMS_OTP_LENGTH:-5} # OTP length (default 5 digits)
-      GOTRUE_SMS_MAX_FREQUENCY: ${GOTRUE_SMS_MAX_FREQUENCY:-60s} # Max frequency for sending OTP to the same number
-
-
       # External OAuth providers
       GOTRUE_EXTERNAL_GOOGLE_ENABLED: ${EXTERNAL_GOOGLE_ENABLED:-false}
       GOTRUE_EXTERNAL_GOOGLE_CLIENT_ID: ${EXTERNAL_GOOGLE_CLIENT_ID:-}
@@ -162,9 +156,9 @@ services:
       # GOTRUE_HOOK_PASSWORD_VERIFICATION_ATTEMPT_ENABLED: "true"
       # GOTRUE_HOOK_PASSWORD_VERIFICATION_ATTEMPT_URI: "pg-functions://postgres/public/password_verification_attempt"
 
-      GOTRUE_HOOK_SEND_SMS_ENABLED: ${GOTRUE_HOOK_SEND_SMS_ENABLED:-false}
-      GOTRUE_HOOK_SEND_SMS_URI: ${GOTRUE_HOOK_SEND_SMS_URI:-}
-      GOTRUE_HOOK_SEND_SMS_SECRETS: ${GOTRUE_HOOK_SEND_SMS_SECRETS:-}
+      GOTRUE_HOOK_SEND_SMS_ENABLED: ${HOOK_SEND_SMS_ENABLED:-false}
+      GOTRUE_HOOK_SEND_SMS_URI: ${HOOK_SEND_SMS_URI:-}
+      GOTRUE_HOOK_SEND_SMS_SECRETS: ${HOOK_SEND_SMS_SECRETS:-}
 
       # GOTRUE_HOOK_SEND_EMAIL_ENABLED: "false"
       # GOTRUE_HOOK_SEND_EMAIL_URI: "http://host.docker.internal:54321/functions/v1/email_sender"
